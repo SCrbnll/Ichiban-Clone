@@ -1,0 +1,104 @@
+---
+import { Image } from "astro:assets";
+---
+
+<div class="kanso-footer-wrapper">
+  <div class="kanso-footer-card message">
+    <p class="footer-message">
+      This is a clone development project, <br />made by Samuel Carbonell<br />
+      Inspired by <a
+        href="https://www.ichiban.bike"
+        target="_blank"
+        rel="noopener noreferrer">www.ichiban.bike</a
+      >
+    </p>
+  </div>
+
+  <div class="kanso-footer-card icons">
+    <div class="footer-icons">
+      <a
+        href="https://github.com/SCrbnll"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
+      >
+        <Image
+          src="/icons/github.svg"
+          alt="GitHub icon"
+          width={32}
+          height={32}
+        />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/samuu-crbnll/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn"
+      >
+        <Image
+          src="/icons/linkedin.svg"
+          alt="LinkedIn icon"
+          width={32}
+          height={32}
+        />
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .kanso-footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+    max-width: 600px;
+    margin-left: 1rem;
+  }
+
+  .kanso-footer-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  }
+
+  .footer-message {
+    font-family: "Consola", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #1d2939;
+    text-align: center;
+  }
+
+  .footer-message a {
+    color: #c74c20;
+    text-decoration: underline;
+  }
+
+  .footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .footer-icons img {
+    transition: transform 0.2s ease;
+  }
+
+  .footer-icons a:hover img {
+    transform: scale(1.15);
+  }
+
+  @media (max-width: 600px) {
+    .footer-message {
+      font-size: 1rem;
+    }
+
+    .footer-icons {
+      gap: 1.5rem;
+    }
+  }
+</style>

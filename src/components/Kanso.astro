@@ -1,0 +1,99 @@
+---
+import { Image } from "astro:assets";
+import KansoFooter from "./KansoFooter.astro";
+---
+
+<section id="unique-design" class="unique container">
+  <div class="kanso-heading">
+    <h2 class="heading-small">CRAFTED WITH THE SPIRIT OF KANSO</h2>
+    <Image
+      src={"/images/simplicity.svg"}
+      alt={"Simplicity written in Japanese"}
+      width={432}
+      height={211}
+      class="heading-image"
+    />
+  </div>
+  <div class="kanso-content-grid">
+    <Image
+      src={"/images/dots.png"}
+      alt={"dots matrix"}
+      width={873}
+      height={402}
+      class="kanso-content-grid-dots"
+    />
+    <Image
+      src={"/images/dots.png"}
+      alt={"dots matrix"}
+      width={873}
+      height={402}
+      class="kanso-content-grid-dots"
+    />
+  </div>
+  <KansoFooter />
+</section>
+
+<style>
+  .unique {
+    z-index: 10;
+    display: block;
+    height: 100vh;
+  }
+
+  .kanso-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 550px;
+    text-wrap: pretty;
+    margin-left: 1rem;
+  }
+
+  .kanso-heading .heading-image {
+    width: max-content;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .kanso-heading .heading-small {
+    background-image: linear-gradient(180deg, #3f4551, #191c22);
+    background-clip: text;
+    font-family: "Akira Expanded", sans-serif;
+    font-size: 1.875rem;
+    line-height: 1.4;
+  }
+
+  .kanso-content-grid {
+    max-width: 640px;
+    grid-column-gap: 2.5rem;
+    grid-row-gap: 2.5rem;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    padding-block: 2rem;
+    display: grid;
+  }
+
+  .kanso-content-grid .kanso-content-grid-dots {
+    height: max-content;
+    width: 100%;
+    max-width: 873px;
+    object-fit: contain;
+  }
+
+  @media screen and (max-width: 768px) {
+    .heading-image {
+      width: 80% !important;
+    }
+    .footer-block-three {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
+    }
+
+    .footer-block-three__social {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
