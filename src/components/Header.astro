@@ -1,0 +1,68 @@
+---
+interface Props {
+    logo: string
+}
+
+const { logo } = Astro.props
+---
+
+<header class="header">
+  <div class="header_content">
+    <img src={logo} alt="Ichiban Clone Logo" class="header_logo" height="56" fetchpriority="high" />
+  </div>
+</header>
+
+<style>
+  .header {
+    font-family: "Consola", sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header_content {
+    position: relative;
+    margin: 0 auto;
+    box-shadow: none;
+    background: linear-gradient(40deg, #ba3816, #aa0000 40%);
+    width: 800px;
+    height: 800px;
+    border-radius: 100%;
+    z-index: 1;
+    margin-top: -580px;
+    animation: slideInDown 1200ms ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .header_logo {
+    margin: 0 auto;
+    margin-top: 500px;
+    max-height: 56px;
+  }
+
+  @media screen and (max-width: 800px) {
+    .header_content {
+      width: 400px;
+      height: 400px;
+      margin-top: -250px;
+    }
+
+    .header_logo {
+      margin-top: 200px;+
+      width: 100px;
+      height: 40px;
+    }
+  }
+
+  @keyframes slideInDown {
+    from {
+      transform: translate3d(0, -100%, 0);
+      opacity: 0;
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+</style>
